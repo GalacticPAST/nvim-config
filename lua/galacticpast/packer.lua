@@ -9,15 +9,6 @@ return require('packer').startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
-
-	use({
-		'rose-pine/neovim',
-		as = 'rose-pine',
-		config = function()
-			vim.cmd('colorscheme rose-pine')
-		end
-	})
-
 	use({
 		"folke/trouble.nvim",
 		config = function()
@@ -36,6 +27,7 @@ return require('packer').startup(function(use)
 			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
 			ts_update()
 		end,}
+        use ("ellisonleao/gruvbox.nvim")
 		use("nvim-treesitter/playground")
 		use("theprimeagen/harpoon")
 		use("theprimeagen/refactoring.nvim")
